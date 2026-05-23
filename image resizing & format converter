@@ -1,0 +1,13 @@
+from PIL import Image
+
+img = Image.open("/flower")
+
+width = int(input("Enter width: "))
+height = int(input("Enter height: "))
+
+resized = img.resize((width, height))
+format_choice = input("Enter output format (jpg/png/bmp): ").lower()
+output_file = "output." + format_choice
+resized.save(output_file)
+
+print("Image resized and converted successfully!")
